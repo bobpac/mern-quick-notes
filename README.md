@@ -26,3 +26,17 @@ Note that the folder created will be same as *name-of-project* instead of mern-i
 9. Push for the first time: git push -u origin main
 
 Have fun coding your new project and don’t forget to make frequent commits!
+
+## To run, create two terminal sessions:
+
+1. In tbe first one, run:
+
+'''
+npm run build           # This only needs to be run once
+nodemon server
+'''
+2. In the second one, run:
+
+'''
+npm run start
+'''

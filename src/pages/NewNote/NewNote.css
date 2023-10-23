@@ -1,0 +1,14 @@
+.formCtr {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-content: center;
+  justify-content: center;
+}
+
+.flexCtr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

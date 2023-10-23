@@ -5,8 +5,7 @@ const notesCtrl = require('../../controllers/api/notes');
 // GET /api/notes
 router.get('/', notesCtrl.getAll);
 
-// POST /api/notes/:id
-router.post('/:id', notesCtrl.create)
-
+// POST /api/notes
+router.post('/', notesCtrl.add)
 
 module.exports = router;

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import * as notesAPI from '../../utilities/notes-api';
@@ -19,13 +18,22 @@ export default function App() {
     getNotes();
   }, []);
 
+  async function handleAddNote(noteStr) {
+    const noteData = {
+      'note': noteStr
+    }
+    console.log(`handleAddNote: noteData=${noteData.note}`)
+    const note = await notesAPI.add(noteData);
+    setNotes([...notes, note]);
+  }
+
   return (
     <main className="App">
       { user ?
           <>
             <NavBar user={user} setUser={setUser} />
             <AllNotes notes={notes}/>
-            <NewNote />
+            <NewNote handleAddNote={handleAddNote}/>
           </>
           :
           <AuthPage setUser={setUser} />
